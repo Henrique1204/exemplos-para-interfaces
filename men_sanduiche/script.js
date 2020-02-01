@@ -12,29 +12,16 @@ function mudar_imagem(ocasiao){
     };
 };
 
-function mudar_cor(ocasiao){
-
-    if(ocasiao == 'em cima'){
-        for(barra of barrinha){
-            barra.style.backgroundColor = '#FF440D';
-        };
-        menu_sanduiche.style.color = '#FF440D';
-    }else{
-        for(barra of barrinha){
-            barra.style.backgroundColor = '#DDEEFF';
-        };
-        menu_sanduiche.style.color = '#DDEEFF';
-    };
-};
-
 function abrir_menu(){
 
     if(menu_sanduiche.innerHTML == 'X'){
         menu_sanduiche.innerHTML = '<div class="barrinha"></div><div class="barrinha"></div><div class="barrinha"></div>';
         menu[0].style.top = '-160px';
+        menu[0].style.opacity = '0';
     }else{
         menu_sanduiche.innerHTML = 'X';
         menu[0].style.top = '84px';
+        menu[0].style.opacity = '1';
     }
 }
 
