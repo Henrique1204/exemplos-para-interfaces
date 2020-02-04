@@ -26,9 +26,7 @@ header{
 ul{
     list-style: none;
     display: flex;
-    padding-inline-start: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
+    padding: 0;
 }
 
 li{
@@ -40,6 +38,8 @@ li:nth-child(1){
 }
 
 nav a{
+    margin-top: 4px;
+    padding: 5px;
     font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
@@ -47,6 +47,7 @@ nav a{
     letter-spacing: 0.1em;
     color: #DDEEFF;
     cursor: pointer;
+    display: inline-block;
 }
 
 nav a::after{

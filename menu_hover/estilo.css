@@ -53,9 +53,7 @@ ul{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding-inline-start: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
+    padding: 0;
 }
 
 li{

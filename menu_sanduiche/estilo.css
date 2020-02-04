@@ -18,6 +18,13 @@ body{
 
 }
 
+header>div:nth-child(1){
+    height: 100%;
+    padding-right: 25px;
+    background-color: inherit;
+    z-index: 1;
+}
+
 .contMenu{
     top: 0;
     position: absolute;
@@ -39,9 +46,9 @@ nav{
     padding: 16px 0;
     position: absolute;
     top: -160px;
-    right: 0;
+    right: 15px;
     background-color: #333355;
-    box-shadow: 8px 8px 10px rgba(0,0,0,0.5);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
     opacity: 0;
     transition: 0.8s;
 }
@@ -54,9 +61,7 @@ ul{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding-inline-start: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
+    padding: 0;
 }
 
 li{
@@ -72,6 +77,7 @@ li:nth-last-child(1)::after{
 }
 
 nav a{
+    padding: 5px;
     font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
