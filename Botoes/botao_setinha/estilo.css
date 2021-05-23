@@ -1,0 +1,131 @@
+/* Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+    color: inherit;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #EEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 270px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #FFF;
+    box-shadow: 2px 2px 6px rgba(44, 44, 44, 0.2);
+}
+
+.modelo {
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    color: #FFF;
+    background-color: #FF4646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes animarSetinhaApontando {
+    0% {
+        transform: translateX(0);
+    } 50% {
+        transform: translateX(1rem);
+    } 100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes animarSetinhaSaindo {
+    0% {
+        transform: translateX(0.5rem);
+    } 100% {
+        transform: translateX(4rem);
+    }
+}
+
+.modelo img {
+    position: relative;
+    z-index: 1;
+    animation: animarSetinhaApontando 1s ease infinite;
+    opacity: 1; 
+    transition: opacity 0.5s ease;
+    transition-delay: 0.5s;
+    pointer-events: none;
+}
+
+.card:hover .anima1 img {
+    animation: animarSetinhaSaindo 0.5s ease forwards;
+    transition-delay: 0s;
+    opacity: 0;
+}
+
+.anima1::after {
+    content: '';
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    color: #EA3434;
+    background-color: currentColor;
+    box-shadow: 0 0 0 0 currentColor;
+    display: block;
+    position: absolute;
+    transition: box-shadow 0.6s ease;
+}
+
+.card:hover .anima1::after {
+    color: #EA3434;
+    box-shadow: 0 0 0 120px currentColor;
+    z-index: 0;
+}
+
+@keyframes animarTextoEntrando {
+    from {
+        font-size: 0rem;
+        opacity: 0;
+    } to {
+        font-size: 1rem;
+        opacity: 1;
+    }
+}
+
+@keyframes animarTextoSaindo {
+    from {
+        font-size: 1rem;
+        opacity: 1;
+    } to {
+        font-size: 0rem;
+        opacity: 0;
+    }
+}
+
+.anima1::before {
+    content: 'ver histórico';
+    text-transform: uppercase;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+    animation: animarTextoSaindo 0.5s ease forwards;
+    z-index: 1;
+}
+
+.card:hover  .anima1::before {
+    animation: animarTextoEntrando 0.5s 0.3s ease forwards;
+}
